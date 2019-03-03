@@ -59,10 +59,11 @@ export default class Loader extends React.Component<Props, State> {
         {
           scale: this.state.loadingProgress.interpolate({
             inputRange: [0, 10, 100],
-            outputRange: [1, 0.8, 70],
+            outputRange: [1, 0.8, 100],
           }),
         },
       ],
+
     };
 
     const appScale = {
@@ -80,7 +81,7 @@ export default class Loader extends React.Component<Props, State> {
       <View style={[StyleSheet.absoluteFill, this.props.backgroundStyle]} />
     );
     const fullScreenWhiteLayer = this.state.animationDone ? null : (
-      <View style={[StyleSheet.absoluteFill, styles.fullScreenWhiteLayer]} />
+      <View style={[StyleSheet.absoluteFill, styles.fullScreenWhiteLayer, this.props.fullScreenWhiteBackgroundStyle]} />
     );
 
     return (
